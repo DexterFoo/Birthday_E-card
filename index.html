@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday E-card - Create</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="bg-music" src="happy-birthday.mp3" loop></audio>
+
+    <div class="form-container">
+        <h1>Create Your Birthday E-card</h1>
+        <input type="text" id="recipientName" placeholder="Enter the recipient's name" required>
+        <textarea id="personalMessage" placeholder="Enter your personalized message" rows="4" required></textarea>
+        <button onclick="createEcard()">Create E-card</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

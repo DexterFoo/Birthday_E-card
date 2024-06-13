@@ -1,0 +1,271 @@
+/* Common Styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url(images.webp);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  padding: 10px; /* Added padding for small screens */
+  }
+
+  .form-container {
+  background-color: #afafaf;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px; /* Added margin bottom for spacing */
+  }
+
+  .form-container input, .form-container textarea {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  }
+
+.form-container button {
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  }
+
+
+  /* Card Styles */
+  .card {
+    width: 640px;
+    height: 400px;
+    position: relative;
+    perspective: 1200px;
+    transition: 1s;
+    margin-bottom: 20px;
+  }
+  .card:hover {
+    transform: rotate(-5deg);
+  }
+  .card:hover .outside {
+    transform: rotateY(-130deg);
+  }
+
+  .outside,
+  .inside {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    left: 50%;
+  }
+  
+  .inside {
+    background: linear-gradient(to right, #ffffff, #ffffff 30%);
+    line-height: 3;
+    padding: 0 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    left: 50%;
+  }
+
+  .outside {
+    transform-style: preserve-3d;
+    z-index: 1;
+    transform-origin: left;
+    transition: 2s;
+    cursor: pointer;
+  }
+
+  .front,
+  .back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+  }
+
+  .front {
+    background-color: #ffffff;
+  }
+  
+  .back {
+    transform: rotateY(180deg);
+    background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
+  }
+
+  .cake {
+    width: 100%;
+    position: absolute;
+    bottom: 30px;
+  }
+
+  .top-layer,
+  .middle-layer,
+  .bottom-layer {
+    height: 80px;
+    width: 240px;
+    background-repeat: repeat;
+    background-size: 60px 100px;
+    background-position: 28px 0;
+    background-image: linear-gradient(
+      transparent 50px,
+      #fedbab 50px,
+      #fedbab 60px,
+      transparent 60px
+    ),
+    radial-gradient(circle at 30px 5px, #994c10 30px, #fcbf29 31px);
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    margin: auto;
+  }
+  .middle-layer {
+    transform: scale(0.85);
+    top: 6px;
+  }
+  .top-layer {
+    transform: scale(0.7);
+    top: 26px;
+  }
+  .candle {
+    height: 45px;
+    width: 15px;
+    background: repeating-linear-gradient(
+      45deg,
+      #fd3018 0,
+      #fd3018 5px,
+      #ffa89e 5px,
+      #ffa89e 10px
+    );
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 202px;
+  }
+  .candle:before {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    background-color: #ffa600e4;
+    border-radius: 0 50% 50% 50%;
+    bottom: 48px;
+    transform: rotate(45deg);
+    left: -1px;
+  }
+  .outside p {
+    font-size: 23px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    text-align: center;
+    letter-spacing: 6px;
+    color: #000046;
+  }
+  .inside h1 {
+    font-size: 120px;
+    line-height: 120px;
+  }
+
+/* Share Button Style */
+.share-btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  background-color: #25D366; /* WhatsApp color */
+  margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 360px) {
+  body {
+      padding: 10px;
+  }
+
+  .form-container {
+      padding: 15px;
+  }
+
+  .form-container input, .form-container textarea {
+      padding: 8px;
+  }
+
+  .form-container button {
+      padding: 8px 15px;
+  }
+
+  .card {
+      width: 100%;
+      height: auto;
+      transform: none; /* Remove rotation on mobile */
+  }
+
+  .outside,
+  .inside {
+      width: 100%;
+      left: 0;
+      position: relative; /* Ensure proper positioning */
+  }
+
+  .inside {
+      padding: 10px;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center align items */
+  }
+
+  .inside h1 {
+      font-size: 60px;
+      line-height: 60px;
+      margin: 0; /* Adjust margin */
+  }
+
+  .outside p {
+      font-size: 18px;
+      letter-spacing: 3px;
+      margin: 0; /* Adjust margin */
+      text-align: center; /* Center text */
+  }
+
+  .share-btn {
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      background-color: #25D366; /* WhatsApp color */
+      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: auto; /* Adjust width */
+  }
+
+  .share-btn img {
+      margin-right: 10px; /* Adjust icon margin */
+  }
+
+  .cake {
+      width: 100%;
+      position: relative; /* Adjust position */
+      bottom: 0; /* Align bottom properly */
+  }
+}
